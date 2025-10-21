@@ -3,7 +3,9 @@
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [PageController::class, 'schedule'])->name('schedule');
+Route::get('/', [PageController::class, 'init'])->name('init');
+
+Route::get('/schedule', [PageController::class, 'schedule'])->name('schedule');
 
 Route::get('/movies/{event?}', [PageController::class, 'movies'])->name('movies');
 

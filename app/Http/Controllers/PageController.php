@@ -11,6 +11,11 @@ class PageController extends Controller
         protected Service $service
     ) {}
 
+    public function init()
+    {
+        return view('pages.init');
+    }
+
     public function schedule()
     {
         return view('pages.schedule', [
@@ -21,7 +26,6 @@ class PageController extends Controller
 
     public function movies($event = null)
     {
-
         return view('pages.movies', [
             'event' => $event,
             'movies' => $this->service->getMovies($event)
